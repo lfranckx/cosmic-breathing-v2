@@ -1,0 +1,45 @@
+@import "./vars";
+
+#about {
+    padding: 100px 0;
+    .h1 {
+        color: $bronze;
+    }
+
+    .content {
+        .list-images {
+            display: flex;
+            align-items: flex-start;
+
+            .list-item {
+                position: relative;
+                &.active {
+                    z-index: 3;
+                }
+                
+                .img-wrap {
+                    margin: 0 10px;
+                    img {
+                        max-width: 320px;
+                        cursor: pointer;
+                        position: relative;
+                        bottom: 0;
+                        transition: all ease .4s;
+
+                        &:hover, &.active {
+                            transform: scale(1.05);
+                        }
+
+                        &.active {
+                            bottom: 200px;
+                        }
+                    }
+                }
+                
+                .text-wrap {
+                    position: absolute;
+                }
+            }
+        }
+    }
+}

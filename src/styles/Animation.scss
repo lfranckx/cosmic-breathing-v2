@@ -1,0 +1,93 @@
+@import "./vars";
+
+.page-wrap {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.content-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    .hex-wrap {
+        position: relative;
+
+        &.top {
+            z-index: 2;
+            
+            svg {
+                opacity: .4;
+                animation: fill-1 4s 0s infinite;
+            }
+        }
+
+        &.left {
+            left: 150px;
+            top: 100px;
+
+            svg {
+                opacity: .4;
+                animation: fill-2 4s 1.2s infinite;
+            }
+        }
+
+        &.right {
+            right: 150px;
+            top: 100px;
+
+            svg {
+                opacity: .4;
+                animation: fill-3 4s 2.2s infinite;
+            }
+        }
+    }
+}
+
+@keyframes fill-1 {
+    0% { fill: transparent; }
+    50% { 
+        fill: $blue;
+        opacity: .1; 
+    }
+    100% { fill: transparent; }
+}
+
+@keyframes fill-2 {
+    0% { fill: transparent; }
+    50% { fill: $peach; }
+    100% { fill: transparent; }
+}
+
+@keyframes fill-3 {
+    0% { fill: transparent; }
+    50% { fill: $babyblue; }
+    100% { fill: transparent; }
+}
+
+@media (max-width: 600px) {
+    .content-wrap {
+        .hex-wrap {
+            margin-top: -200px;
+            &.left {
+                left: 90px;
+                top: 60px;
+            }
+    
+            &.right {
+                right: 90px;
+                top: 60px;
+            }
+        }
+    }
+
+    .hex {
+        width: 156px;
+        height: 178.8px;
+    }
+}

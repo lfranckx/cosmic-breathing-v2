@@ -1,0 +1,48 @@
+@import "./vars";
+
+.home_wrap {
+    z-index: 3;
+}
+
+#home {
+    padding: 0;
+
+    h1 {
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: $reg-text;
+        font-weight: 400;
+        text-align: center;
+        span {
+            color: $bronze;
+
+            &.space {
+                margin: 0 6px;
+            }
+        }
+    }
+
+    h3 {
+        font-size: $reg-text;
+        font-weight: 400;
+        color: $black;
+    }
+
+    .logo-wrap {
+        margin: 20px;
+        max-width: 100%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #home {
+        margin-top: -200px;
+    }
+}

@@ -1,0 +1,131 @@
+@import "./vars";
+
+#services {
+    padding: 200px 0;
+
+    .h1 {
+        margin-bottom: 2rem;
+    }
+
+    .accordion {
+        .item {
+            border-bottom: solid 1px $black;
+
+            .row {
+                padding: 12px 4px;
+    
+                .opener {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    -webkit-transition: all .16s ease-in-out;
+                    -o-transition: all .16s ease-in-out;
+                    transition: all .16s ease-in-out;
+    
+                    .wrap {
+                        display: inline-flex;
+                        align-items: center;
+                        position: relative;
+    
+                        .line {
+                            height: 24px;
+                            width: 24px;
+                            position: relative;
+    
+                            &::before {
+                                transition: transform .4s cubic-bezier(.17,.01,.22,1.14);
+                                content: "";
+                                position: relative;
+                                display: inline-block;
+                                top: 0.425px;
+                                left: 0;
+                                width: 1px;
+                                height: 100%;
+                                background-color: $bronze;
+                            }
+    
+                            &.line-1 {
+                                position: absolute;
+                                &::before {
+                                    transform: translate3d(-1.7px,0,0) rotate(90deg) skewX(0deg);
+                                    transition: transform .3s cubic-bezier(.17,.01,.22,1.14);
+                                }
+                            }
+    
+                            &.line-2 {
+                                &::before {
+                                    transform: translate3d(-1.7px,0,0) rotate(0deg) skewX(0deg);
+                                    transition: transform .3s cubic-bezier(.17,.01,.22,1.14);
+                                }
+    
+                                &.active {
+                                    &::before {
+                                        transform: translate3d(-1.7px,0,0) rotate(90deg) skewX(0deg);
+                                        transition: transform .3s cubic-bezier(.17,.01,.22,1.14);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .item-content {
+                position: relative;
+                padding: 8px;
+                height: auto;
+                transition: all ease-in .4s;
+
+                .content-wrap {
+                    display: flex;
+
+                    .text-wrap {
+                        position: relative;
+                    }
+
+                    .image-wrap {
+                        margin-top: 10px;
+                        margin-right: -25px;
+
+                        img {
+                            max-width: 260px;
+                        }
+                    }
+                }
+
+                .btn-wrap {
+                    margin: 12px 0;
+                }
+
+                &.hidden {
+                    height: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #services {
+        .accordion {
+            .item {
+                .item-content {
+                    .content-wrap {
+                        flex-direction: column-reverse;
+
+                        .image-wrap {
+                            img {
+                                max-width: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
